@@ -15,7 +15,7 @@ int ManageNum;
 const char BeginTitle[]="begin";
 const char EndTitle[]="end";
 
-void RegistManger(char *pSrc)
+void RegistManger(char *pSrc)       //加载账号信息到内存
 {
     char *pFind = pSrc;
     int ret;
@@ -45,7 +45,7 @@ void RegistManger(char *pSrc)
         }
     }
 }
-T_ManageOpr *LogManger(char * account,char * password)
+T_ManageOpr *LogManger(char * account,char * password)      //账号上线
 {
     int i;
     for (i = 0; i < 10; ++i)
@@ -73,7 +73,7 @@ T_ManageOpr *LogManger(char * account,char * password)
     }
     return NULL;
 }
-void unLogManger(char * account)
+void unLogManger(char * account)        //账号下线
 {
     int i;
     for (i = 0; i < 10; ++i)
@@ -85,7 +85,7 @@ void unLogManger(char * account)
     }
 }
 
-int Archives_Init()
+int Archives_Init()     //数据库初始化
 {
     int fd;
     char *membuf = NULL;

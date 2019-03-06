@@ -8,8 +8,10 @@
 #include <pthread.h>
 
 
-#define SERVERPORT 1234
-pthread_rwlock_t rwlock;    //声明读写锁
+#define SERVERPORT 1234                 //服务器端口号
+#define SERVERIP "192.168.9.207"        //服务器IP
+
+pthread_rwlock_t rwlock;                //声明读写锁
 unsigned char ucBuffer[1000];
 
 char account[10];
@@ -103,7 +105,7 @@ int main(int argc, int **argv)
 
     SockAddrServer.sin_family = AF_INET;
     SockAddrServer.sin_port = htons(SERVERPORT);
-    ret = inet_aton("192.168.9.207",&SockAddrServer.sin_addr);
+    ret = inet_aton(SERVERIP,&SockAddrServer.sin_addr);
     memset(SockAddrServer.sin_zero,0,8);
     ret = connect(iSocketClient, (struct sockaddr *)&SockAddrServer,sizeof(struct sockaddr));   //连接至服务器
     if(-1 == ret)

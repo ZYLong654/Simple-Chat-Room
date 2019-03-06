@@ -9,12 +9,11 @@ typedef struct LogOpr {
 }T_LogOpr, *PT_LogOpr;
 
 
-#define SERVERPORT 1234
+#define SERVERPORT 1234     //服务器端口
 
-#define BACKLOG    10
+#define BACKLOG    10       //最大聊天人数
 
-#define LEND 1000
-
+#define LEND 1000           //缓存数据长度
 
 
 
